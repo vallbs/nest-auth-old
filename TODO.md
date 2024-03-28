@@ -1,0 +1,10 @@
+- make more abstract interface to db service. For now PrismaService is used. I want to abstract to DbService in order to switch to TypeOrm for example
+- migrate userId from number to smth more suitable and production ready
+- add try-catch where appropriate
+- maybe we should not respond with 400 on the consequtive run logout with error 'User is already logged out'
+- maybe we should store not the hash of refresh token bur access token
+- create constants for all strings
+- implement guard for '/refresh' endpoint when we logged out bu try to refresh token with some refresh token. For now errro in bcrypt.compare with empty refresh token from user record
+- also refresh works when run two times with the same refresh token - which should not work as we refreshed the token the old one should not work
+- implement endpoint GET /user/me
+- store some secrets not in .env (development mode) but in github (production mode)
